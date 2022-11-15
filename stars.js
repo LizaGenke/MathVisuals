@@ -9,6 +9,7 @@ outputStep.innerHTML = stepSlider.value; // Display the default slider value
 // Update the current slider value (each time you drag the slider handle)
 sizeSlider.oninput = function() {
     outputSize.innerHTML = this.value;
+    stepSlider.max = this.value;
     newStarPlot(this.value, stepSlider.value);
 }
 
