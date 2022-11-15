@@ -45,7 +45,8 @@ function makeTrace(starSize, starStep) {
         y: getYCoords(starSize, starStep),
         x: getXCoords(starSize, starStep),
         line: {
-            color: 'black'
+            color: 'black',
+            width: 0.5
         },
         visible: true,
         name: 'Star',
