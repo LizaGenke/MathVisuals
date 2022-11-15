@@ -53,9 +53,12 @@ function makeTrace(starSize, starStep) {
 
 function newStarPlot(starSize, starStep) {
     Plotly.newPlot('graph', Array(makeTrace(starSize, starStep)), {
+        xaxis: {
+            range: [-1.0, 1.0],
+        },
         yaxis: {
-            scaleanchor: "x",
-            scaleratio: 1,
+            range: [-1, 1],
+            scaleanchor: 'x',
         },
     });
 }
