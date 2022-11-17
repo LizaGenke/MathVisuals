@@ -8,9 +8,14 @@ outputStep.innerHTML = stepSlider.value; // Display the default slider value
 
 // Update the current slider value (each time you drag the slider handle)
 sizeSlider.oninput = function() {
-    outputSize.innerHTML = this.value;
-    stepSlider.max = this.value;
-    newStarPlot(this.value, stepSlider.value);
+    outputSize.innerHTML = sizeSlider.value;
+    if (parseInt(stepSlider.value) > parseInt(sizeSlider.value))
+    {
+        stepSlider.value = parseInt(sizeSlider.value) - 1;
+        outputStep.innerHTML = stepSlider.value;
+    }
+    stepSlider.max = parseInt(sizeSlider.value) - 1;
+    newStarPlot(sizeSlider.value, stepSlider.value);
 }
 
 stepSlider.oninput = function() {
@@ -59,7 +64,7 @@ function newStarPlot(starSize, starStep) {
             range: [-1.0, 1.0],
         },
         yaxis: {
-            range: [-1, 1],
+            range: [-1.0, 1.0],
             scaleanchor: 'x',
         },
     });
