@@ -15,6 +15,7 @@ sizeSlider.oninput = function() {
         outputStep.innerHTML = stepSlider.value;
     }
     stepSlider.max = parseInt(sizeSlider.value) - 1;
+    outputStep.innerHTML = stepSlider.value;
     newStarPlot(sizeSlider.value, stepSlider.value);
 }
 
